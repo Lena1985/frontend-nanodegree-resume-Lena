@@ -104,8 +104,8 @@ bio.display = function() {
 		for (var index = 0; index < bio.skills.length; index++) {
 			var formattedSkill = HTMLskills.replace("%data%", bio.skills[index]);
 			$("#skills").append(formattedSkill);
-		};
-	};
+		}
+	}
 
 	// Display Contact Information TOP and FOOTER
 	var formattedMobile= HTMLmobile.replace("%data%", bio.contacts.mobile);
@@ -137,7 +137,7 @@ work.display = function() {
 		$(".work-entry:last").append(formattedLocation);
 		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[index].description);
 		$(".work-entry:last").append(formattedDescription);
-	};
+	}
 };
 
 work.display();
@@ -160,9 +160,9 @@ projects.display = function() {
 			for(var imageIndex = 0; imageIndex < projects.projects[index].images.length; imageIndex++) {
 				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[index].images[imageIndex]);
 				$(".project-entry:last").append(formattedImage);
-			};
-		};
-	};
+			}
+		}
+	}
 };
 
 projects.display();
@@ -187,25 +187,25 @@ education.display = function() {
 		$(".education-entry:last").append(formattedLocation);
 		var formattedMajors = HTMLschoolMajor.replace("%data%", education.schools[index].majors);
 		$(".education-entry:last").append(formattedMajors);
-	};
+	}
 
 	//Display Online Course Information
-	for(var index = 0; index < education.onlineCourses.length; index++) {
+	for(var courseIndex = 0; courseIndex < education.onlineCourses.length; courseIndex++) {
 		$(".education-entry:last").append(HTMLonlineClasses);
 
 
 		//Concatenate title and School of Online Course
-		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[index].title);
-		var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[index].school);
+		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[courseIndex].title);
+		var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[courseIndex].school);
 		var formattedTitleAndSchool = formattedOnlineTitle + formattedOnlineSchool;
 		$(".education-entry:last").append(formattedTitleAndSchool);
 
 		//Display other Information of Online Course
-		var formattedOnlineDates= HTMLonlineDates.replace("%data%", education.onlineCourses[index].date);
+		var formattedOnlineDates= HTMLonlineDates.replace("%data%", education.onlineCourses[courseIndex].date);
 		$(".education-entry:last").append(formattedOnlineDates);
-		var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[index].url);
+		var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[courseIndex].url);
 	 	$(".education-entry:last").append(formattedOnlineURL);
-	};
+	}
 };
 
 education.display();
