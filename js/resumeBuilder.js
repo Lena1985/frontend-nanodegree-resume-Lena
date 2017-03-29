@@ -3,13 +3,12 @@
 var bio = {
 	"name": "Lena Bieger",
 	"role": "Web Developer",	
-	"contacts": 
-		{
+	"contacts": {
 		"mobile": "0152-1234567",
 		"email": "lena.bieger@icloud.com",
 		"github": "Lena1985",
 		"twitter": "lena@twitter",
-		"location": "Munich Germany"
+		"location": "Munich, Germany"
 		},
 	"welcomeMessage": "Hi everybody, welcome to my resume! I hope you like it!",
 	"skills": ["HTML","CSS", "JavaScript"],
@@ -108,11 +107,12 @@ bio.display = function() {
 	}
 
 	// Display Contact Information TOP and FOOTER
-	var formattedMobile= HTMLmobile.replace("%data%", bio.contacts.mobile);
-	var formattedEmail= HTMLemail.replace("%data%", bio.contacts.email);
-	var formattedGitHub= HTMLgithub.replace("%data%", bio.contacts.github);
-	var formattedTwitter= HTMLtwitter.replace("%data%", bio.contacts.twitter);
-	$("#topContacts, #footerContacts").append(formattedMobile, formattedEmail, formattedGitHub, formattedTwitter);
+	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+	var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
+	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+	$("#topContacts, #footerContacts").append(formattedMobile, formattedEmail, formattedGitHub, formattedTwitter, formattedLocation);
 };
 
 bio.display();
@@ -201,7 +201,7 @@ education.display = function() {
 		$(".education-entry:last").append(formattedTitleAndSchool);
 
 		//Display other Information of Online Course
-		var formattedOnlineDates= HTMLonlineDates.replace("%data%", education.onlineCourses[courseIndex].date);
+		var formattedOnlineDates= HTMLonlineDates.replace("%data%", education.onlineCourses[courseIndex].dates);
 		$(".education-entry:last").append(formattedOnlineDates);
 		var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[courseIndex].url);
 	 	$(".education-entry:last").append(formattedOnlineURL);
